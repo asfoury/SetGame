@@ -49,7 +49,8 @@ struct SetGame<Shape, Filing, Color> where Shape : Equatable, Filing : Equatable
             self.selectedCards.append(new_card)
             //  when adding the 3rd card check if form valid set
             if checkIfThreeCardsFormValidSet(c1: self.selectedCards[0], c2: self.selectedCards[1], c3: self.selectedCards[2]) {
-               // remove cards from table
+                print(self.selectedCards)
+                // remove cards from table
                 for card in selectedCards {
                     let index = self.table.firstIndex(matching: card)!
                     self.table.remove(at: index)
@@ -98,7 +99,7 @@ struct SetGame<Shape, Filing, Color> where Shape : Equatable, Filing : Equatable
         if v1 == v2 && v1 == v3 && v2==v3 {
             return true
         }
-        else if v1 != v2 && v1 != v2 && v2 != v3 {
+        else if v1 != v2 && v1 != v3 && v2 != v3 {
             return true
         }
         else {
